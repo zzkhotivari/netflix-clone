@@ -1,10 +1,14 @@
 import type { GetServerSideProps } from "next";
-import { Movie } from "../typings";
 import Row from "../components/Row";
 import Head from "next/head";
+import Modal from "../components/Modal";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
+import useAuth from "../hooks/useAuth";
 import requests from "../utils/requests";
+import { Movie } from "../typings";
+import { modalState } from "../atoms/modalAtom";
+import { useRecoilValue } from "recoil";
 
 interface IProps {
   netflixOriginals: Movie[];
@@ -27,6 +31,11 @@ const Home = ({
   romanceMovies,
   documentaries,
 }: IProps) => {
+  const { loading } = useAuth();
+  const showModal = useRecoilValue(modalState);
+
+  if (loading) return null;
+
   return (
     <div className="relative h-screen bg-gradient-to-b lg:h-[140vh]">
       <Head>
@@ -46,6 +55,7 @@ const Home = ({
           <Row title="Documentaries" movies={documentaries} />
         </section>
       </main>
+      {showModal && <Modal />}
     </div>
   );
 };
