@@ -1,11 +1,16 @@
-import { Movie } from "../typings";
 import Image from "next/image";
+import { Movie } from "../typings";
+import { useRecoilState } from "recoil";
+import { modalState, movieState } from "../atoms/modalAtom";
 
 interface IProps {
   movie: Movie;
 }
 
 function Thumbnail({ movie }: IProps) {
+  const [showModal, setShowModal] = useRecoilState(modalState);
+  const [currentMovie, setCurrentMovie] = useRecoilState(movieState);
+
   return (
     <div
       className="relative h-28 min-w-[180px] cursor-pointer
