@@ -43,6 +43,7 @@ function Modal() {
   const handleClose = () => {
     setShowModal(false);
   };
+  console.log(trailer);
 
   return (
     <MuiModal open={showModal} onClose={handleClose}>
@@ -54,7 +55,7 @@ function Modal() {
         >
           <XIcon />
         </button>
-        <div>
+        <div className="relative pt-[56.25%]">
           <ReactPlayer
             url={`https://www.youtube.com/watch?v=${trailer}`}
             width="100%"
