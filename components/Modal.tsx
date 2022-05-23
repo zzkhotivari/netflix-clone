@@ -18,8 +18,8 @@ import {
   setDoc,
   deleteDoc,
   collection,
-  DocumentData,
   onSnapshot,
+  DocumentData,
 } from "firebase/firestore";
 import { db } from "../firebase";
 import useAuth from "../hooks/useAuth";
