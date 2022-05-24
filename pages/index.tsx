@@ -12,6 +12,7 @@ import { Movie } from "../typings";
 import { modalState } from "../atoms/modalAtom";
 import { useRecoilValue } from "recoil";
 import { getProducts, Product } from "@stripe/firestore-stripe-payments";
+import useSubscription from "../hooks/useSubscription";
 
 interface IProps {
   netflixOriginals: Movie[];
@@ -36,10 +37,9 @@ const Home = ({
   documentaries,
   netflixOriginals,
 }: IProps) => {
-  const { loading } = useAuth();
+  const { loading, user } = useAuth();
   const showModal = useRecoilValue(modalState);
-
-  const subscription = false;
+  const subscription = useSubscription(user);
 
   if (loading || subscription === null) return null;
   if (!subscription) return <Plans products={products} />;
