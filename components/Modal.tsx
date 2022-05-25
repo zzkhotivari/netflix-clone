@@ -129,13 +129,13 @@ function Modal() {
     <MuiModal
       open={showModal}
       onClose={handleClose}
-      className="fixed !top-7 left-0 right-0 z-50 mx-auto w-full max-w-5xl 
+      className="fixed !top-7 left-0 right-0 z-50 mx-auto w-full max-w-5xl
       overflow-hidden overflow-y-scroll rounded-md scrollbar-hide"
     >
       <>
         <Toaster position="bottom-center" />
         <button
-          className="modalButton absolute right-5 top-5 !z-40 h-9 w-9 
+          className="modalButton absolute right-5 top-5 !z-40 h-9 w-9
           border-none bg-[#181818] hover:bg-[#181818]"
           onClick={handleClose}
         >
@@ -153,7 +153,10 @@ function Modal() {
           />
           <div className="absolute bottom-10 flex w-full items-center justify-between px-10">
             <div className="flex space-x-2">
-              <button className="flex items-center gap-x-2 rounded bg-white px-8 text-xl font-bold text-black transition hover:bg-[#e6e6e6]">
+              <button
+                className="flex items-center gap-x-2 rounded bg-white px-8
+              text-xl font-bold text-black transition hover:bg-[#e6e6e6]"
+              >
                 <FaPlay className="h-7 w-7 text-black" />
                 Play
               </button>

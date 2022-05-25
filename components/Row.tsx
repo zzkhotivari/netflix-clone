@@ -1,11 +1,12 @@
 import { useCallback, useRef, useState } from "react";
 import { Movie } from "../typings";
+import { DocumentData } from "firebase/firestore";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import Thumbnail from "./Thumbnail";
 
 interface IProps {
   title: string;
-  movies: Movie[];
+  movies: Movie | DocumentData;
 }
 
 function Row({ title, movies }: IProps) {
