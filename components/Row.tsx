@@ -6,7 +6,7 @@ import Thumbnail from "./Thumbnail";
 
 interface IProps {
   title: string;
-  movies: Movie | DocumentData;
+  movies: Movie[] | DocumentData;
 }
 
 function Row({ title, movies }: IProps) {
