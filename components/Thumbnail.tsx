@@ -26,8 +26,7 @@ function Thumbnail({ movie }: IProps) {
           movie.backdrop_path || movie.poster_path
         }`}
         layout="fill"
-        className="rounded-sm object-cover md:rounded"
-      />
+        className="rounded-sm object-cover md:rounded" />
     </div>
   );
 }
